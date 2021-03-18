@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Task1
+namespace Task1_clin
 {
     class Program
     {
