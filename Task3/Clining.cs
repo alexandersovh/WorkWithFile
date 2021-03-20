@@ -18,7 +18,6 @@ namespace Task3
             {
                 i = fileInfo.Length;
                 fileInfo.Delete();
-                Console.WriteLine("File delete");
             }
             return i;
         }

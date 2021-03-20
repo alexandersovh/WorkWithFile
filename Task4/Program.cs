@@ -6,7 +6,8 @@ namespace Task4
     {
         static void Main(string[] args)
         {
-            
+            Studetns.WriteData();
+            Console.ReadKey();
         }
     }
 }
