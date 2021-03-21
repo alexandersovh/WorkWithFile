@@ -2,16 +2,25 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace FinalTask
+namespace FinalTask4
 {
     class Program
     {
-        const string CreateFolder = "Students";
+        const string FolderStud = "Students";
         const string PathDesctop = @"C:\Users\alexandr\Desktop\";
+
         static void Main(string[] args)
         {
 
-            SortStudentToFile(PathDesctop);
+            try
+            {
+                CheckFolder(PathDesctop);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Oшибка: " + ex.Message);
+            }
+
             Console.ReadKey();
         }
 
@@ -28,31 +37,49 @@ namespace FinalTask
                 return newStud;
             }
         }
+        /// <summary>
+        /// Проверяет наличие папки в указанной дериктории
+        /// </summary>
+        /// <param name="path"></param>
+        static void CheckFolder(string path)
+        {
+            string pathStud = Path.Combine(path, FolderStud);
+            DirectoryInfo dirInf = new DirectoryInfo(pathStud);
+            if (dirInf.Exists)
+            {
+                dirInf.Delete(true);
+                Console.WriteLine("Обновление Файла 'Student'");
+            }
+            Console.WriteLine("Создани фаил 'Student'");
+            dirInf.Create();
+            SortStudentToFile(pathStud);
+            
+
+        }
         static void SortStudentToFile(string path)
         {
-            
-            Student[] stud = ReadFile(path + "Students.dat");
-            Directory.CreateDirectory(path + CreateFolder);
+            string getFile= Path.Combine(PathDesctop + "Students.dat");
+            Student[] stud = ReadFile(getFile);
 
             foreach (Student arrGrop in stud)
             {
-                string studGroup = Path.Combine(path,CreateFolder,arrGrop.Group + ".txt");
-                if (!File.Exists(studGroup)) 
+                string studGroup = Path.Combine(path, arrGrop.Group + ".txt");
+                if (!File.Exists(studGroup))
                 {
                     using (StreamWriter sw = File.CreateText(studGroup))
                     {
-                        foreach(Student arrStud in stud)
+                        foreach (Student arrStud in stud)
                         {
                             if (arrStud.Group == arrGrop.Group)
                             {
-                                sw.WriteLine($"Имя: {arrStud.Name}, Дата раждения: {arrStud.DateOfBirth.Date}," +
-                                    $" их группа,{arrStud.Group} \n________________________________________________");
+                                sw.WriteLine($"Имя: {arrStud.Name}\t| Дата раждения: {arrStud.DateOfBirth.ToShortDateString()}");
                             }
                         }
                     }
                 }
 
             }
+            Console.WriteLine("Студенты pасформированы по группам");
         }
     }
 }

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task2_Size", "Task2\Task2_S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task3_siseClin", "Task3\Task3_siseClin.csproj", "{6F90C4EA-1520-4D1F-83CE-27C6F6BF573E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalTask", "Task4\FinalTask.csproj", "{1061823B-B9A9-41D2-82E0-82CA859486E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalTask4", "Task4\FinalTask4.csproj", "{1061823B-B9A9-41D2-82E0-82CA859486E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

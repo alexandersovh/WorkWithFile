@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 //using System.Collections.Generic;
 //using System.Text;
 
-namespace FinalTask
+namespace FinalTask4
 {
     [Serializable]
     class Student
