@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace FinalTask4
+namespace FinalTask
 {
     class Program
     {
