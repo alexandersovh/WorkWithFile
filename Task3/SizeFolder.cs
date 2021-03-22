@@ -7,35 +7,6 @@ namespace Task3
 {
     class SizeFolder
     {
-        //public static void WriteFolderInfo(string path)
-        //{
-
-        //    DirectoryInfo dirInfo = new DirectoryInfo(path);
-
-        //    var folders = dirInfo.GetDirectories();
-        //    var fils = dirInfo.GetFiles();
-
-        //    Console.WriteLine(dirInfo.FullName + $"\nразмер {DirSize(dirInfo)} bite");
-
-        //    Clining.InputPathDel(path);
-        //    Console.WriteLine("Folder:\n");
-        //    foreach (var folder in folders)
-        //    {
-        //        try
-        //        {
-
-        //            Console.WriteLine(folder.Name + $" - {DirSize(dirInfo)} байт");
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            Console.WriteLine(folder.Name + $" - невышло: {e.Message}");
-
-        //        }
-        //    }
-        //    Console.WriteLine("file:\n");
-
-
-        //}
         public static long DirSize(DirectoryInfo d)
         {
             long size = 0;
